@@ -1,0 +1,561 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+	<title>Liam Blog</title>
+	<link>https://rebootcyber.xyz/tags/hack/</link>
+	<description>Recent content in HACK on Liam Blog</description>
+	<generator>Hugo -- gohugo.io</generator>
+	<lastBuildDate>Fri, 07 Oct 2022 14:21:08 -0500</lastBuildDate>
+    
+        <atom:link href="https://rebootcyber.xyz/tags/hack/index.xml" rel="self" type="application/rss+xml" />
+	
+	
+	<item>
+		<title>Subdomain Takeover</title>
+		<link>https://rebootcyber.xyz/posts/subdomain-takeover/</link>
+		<pubDate>Wed, 16 Nov 2022 15:29:13 -0600</pubDate>
+		
+		<guid>https://rebootcyber.xyz/posts/subdomain-takeover/</guid>
+		<description>&lt;h1 id=&#34;what-are-subdomains&#34;&gt;What are subdomains&lt;/h1&gt;
+&lt;p&gt;To explain what a subdomain is you need to explain what a domain is. A domain name is the name of your website. So like
+rebootcyber.xyz  or google.com is a domain. This allows users to just type in a name instead of a ip address. This makes it
+so much easy to remeber a website.&lt;/p&gt;
+&lt;p&gt;Back to what a subdomain is. All a subdomain is a prefox added to a domain name to separte a section of a website. Site
+owners primarily use subdomain to manage extensive section that require their own content. Subdomain function as a separte
+website from its domain. This distinction enables developers to develop a section of a website without muddling a site&amp;rsquo;s
+overall intent.&lt;/p&gt;
+&lt;h1 id=&#34;a-subdomain-takeover&#34;&gt;A subdomain takeover&lt;/h1&gt;
+&lt;p&gt;If you have a subdomain on your website like searx.rebootcyber.xyz. If you  delete the config for searx.rebootcyber.xyz. You
+might thing is fine but NO you are not. If this subdomain point to 3rd party sites like github. If you boss says &amp;ldquo;We don&amp;rsquo;t
+need a github account anymore&amp;rdquo;. Then you delete the account but keep the subdomain. A hacker can create a new github with the
+same github account. Then the DNS entry will point to the hacker github so my code my rules. This is completely untraceable.&lt;/p&gt;
+&lt;h1 id=&#34;how-to-protect-your-website&#34;&gt;How to protect your website&lt;/h1&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/dnsmeme.jpg&#34; alt=&#34;dns&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;CHECK YOUR DNS RECORDS. Don&amp;rsquo;t leave any emtpy DNS records.&lt;/p&gt;
+</description>
+	</item>
+	
+	<item>
+		<title>IP Address</title>
+		<link>https://rebootcyber.xyz/posts/ip-address/</link>
+		<pubDate>Sat, 05 Nov 2022 11:10:02 -0500</pubDate>
+		
+		<guid>https://rebootcyber.xyz/posts/ip-address/</guid>
+		<description>&lt;h1 id=&#34;what-is-a-ip-address&#34;&gt;What is a IP Address?&lt;/h1&gt;
+&lt;p&gt;An IP address is Internet Protocol Address. Basically it is the address to a computer. There are two types IPv4 and IPv6. IPv4 is used everywhere but is every old. IPv6 is not used every much but is newer.&lt;/p&gt;
+&lt;h2 id=&#34;ipv4&#34;&gt;IPv4&lt;/h2&gt;
+&lt;p&gt;An IPv4 address looks like 127.0.0.1. It is kinda of a complete technology to understand. So there is public and private address. Do to some compact math there are only 4 billion IPv4 address in the world but there are 16 billion internet facing devices in the world. I may suck at math but 16 is bigger than 4.&lt;/p&gt;
+&lt;p&gt;You may be asking how do I have so many devices that can access the internet if we ran out of address. Well that is a cool technology called NAT(Network Address Translation)  it’s a way to map multiple local private addresses to a public one before transferring the information.&lt;/p&gt;
+&lt;h3 id=&#34;nat&#34;&gt;NAT&lt;/h3&gt;
+&lt;p&gt;There are multiply type of NAT and they are:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Static NAT&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;When the local address is converted to a public one, this NAT chooses the same one. This means there will be a consistent public IP address associated with that router or NAT device.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Dynamic NAT&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Instead of choosing the same IP address every time, this NAT goes through a pool of public IP addresses. This results in the router or NAT device getting a different address each time the router translates the local address to a public address.&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;PAT&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;PAT stands for port address translation. It’s a type of dynamic NAT, but it bands several local IP addresses to a singular public one. Organizations that want all their employees’ activity to use a singular IP address use a PAT, often under the supervision of a network administrator.&lt;/p&gt;
+&lt;h3 id=&#34;the-different-between-public-and-private-ipv4-address&#34;&gt;The different between public and private IPv4 address&lt;/h3&gt;
+&lt;p&gt;So public address are just give out and they look like this 207.148.23.122. Will private address are special address. So Internet Corporation for Assigned Names and Numbers(Icann) said that you could not use certain address for public address and they are&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;10.0.0.0 – 10.255.255.255&lt;/li&gt;
+&lt;li&gt;172.16.0.0 – 172.31.255.255&lt;/li&gt;
+&lt;li&gt;192.168.0.0 – 192.168.255.255
+This are class A, B, and C address. There are some other type of Address but I will not cover them in this post.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;ipv6&#34;&gt;IPv6&lt;/h2&gt;
+&lt;p&gt;This address look like this 2001:0db8:0000:0000:0000:8a2e:0370:7334. There are 340,282,366,920,938,463,463,374,607,431,768,211,456 addresses. That is a lot more than IPv4 has. The reson we don&amp;rsquo;t use it is that it would take a lot of effort to move to IPv6 and I guess if it is not broken do not fix it. When give address you use DHCPv6 instead of DHCP. There is also type of IPv6 address:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Unicast&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The Unicast address type is probably the most important one. It distinguishes itself by these sub-type addresses:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Global Unique Addresses: Globally reachable. Examples:
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;2001:581:f3d1:241f::/64&lt;/p&gt;
+&lt;p&gt;2a01:388:3d11:f124::/64&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Link-local addresses: Required on every IPv6-enabled interface, but packets cannot leave or enter the interface. This address is mostly used by software applications and starts with:
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;fe80::/10&lt;/p&gt;
+&lt;p&gt;Site-local addresses: Deprecated, see (RFC 3879)[https://www.rfc-editor.org/info/rfc3879].
+Loopback address: This is the address we know as 127.0.0.1/8 in IPv4, and it is written as follows in IPv6:&lt;/p&gt;
+&lt;p&gt;::1/128&lt;/p&gt;
+&lt;p&gt;Unique local addresses: Routable only within the scope of the organization. These addresses are not routable globally. IPv4 equivalent private ranges are 10.0.0.0/8, 192.168.1.0/24, and so on. Unique local addresses in IPv6 start with:&lt;/p&gt;
+&lt;p&gt;fc00::/7&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Multicast
+Multicast is the technique used to send a packet from one source (or multiple sources) to multiple destinations (receivers). In its simplest form, a multicast flow is as follows. First, a host sends an ICMPv6 packet (host solicitation) to the router(s) multicast group. Then, a router responds to this request and sends a Router Advertisement (RA) packet back to the client along with configuration parameters:
+&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/Multicast.png&#34; alt=&#34;mutlicast&#34;  /&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The multicast address range is ff00::/8. The first 8 bits are always ff (in binary 1111 1111).&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Anycast&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The Anycast address behaves similarly to the Multicast address, except for the following. A packet sent from a client goes to a single selected destination and not to the whole group identified by the same destination address. The receiving endpoint is selected based on the least expensive routing metric. The router uses the equal-cost multi-path to do this:&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/Anycast.png&#34; alt=&#34;Anycast&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Eventually, we will all be using IPv6. The sooner you understand how this address space works, and how to implement IPv6 in your own networks, the better.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;This are the basic of IP address I know it look compacted but just keep at it and you will get it.&lt;/p&gt;
+</description>
+	</item>
+	
+	<item>
+		<title>Dns</title>
+		<link>https://rebootcyber.xyz/posts/dns/</link>
+		<pubDate>Sun, 30 Oct 2022 09:23:20 -0500</pubDate>
+		
+		<guid>https://rebootcyber.xyz/posts/dns/</guid>
+		<description>&lt;h1 id=&#34;what-is-dns&#34;&gt;What is DNS?&lt;/h1&gt;
+&lt;p&gt;DNS is Domain Name Server, when you go to google.com, computers don&amp;rsquo;t know what google.com is but it does know what an IP address is. So you have a file on you computer that says google.com equals 127.0.0.1. If you want to see the IP of google.com&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ping google.com
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;on any system.&lt;/p&gt;
+&lt;h1 id=&#34;how-does-dns-work&#34;&gt;How does DNS work?&lt;/h1&gt;
+&lt;p&gt;So when you go to a site like rebootcyber.xyz. First your pc check its DNS cache file then go to a local name server like your router or &lt;a href=&#34;https://rebootcyber.xyz/post/pihole.md&#34;&gt;pi-hole&lt;/a&gt;. Then to a .com name server. Final to rebootcyber.xyz nameserver. If there are subdomains you want to go to then it will be the job of rebootcyber.xyz nameserver.&lt;/p&gt;
+&lt;h1 id=&#34;types-of-dns&#34;&gt;Types of DNS&lt;/h1&gt;
+&lt;p&gt;There are dns types. To begin A records are for IPv4 and AAAA records are for IPv6 address. Cnames are name alias of another server. MX records are for mail server. So like imap.gmail.com and smtp.gmail.com. NS are name for the domain this is normal handle by the company that you go your domain name from. PTR(Point Records) are reverse dns lookup. So if you look up 207.148.23.122 then it would tell you that is rebootcyber.xyz.&lt;/p&gt;
+&lt;h1 id=&#34;important-note&#34;&gt;Important note&lt;/h1&gt;
+&lt;p&gt;I will be doing a tutorial on how to setup your own website, email server, search engine, and cloud server(maybe)&lt;/p&gt;
+</description>
+	</item>
+	
+	<item>
+		<title>Lis</title>
+		<link>https://rebootcyber.xyz/posts/lis/</link>
+		<pubDate>Sat, 15 Oct 2022 15:13:23 -0500</pubDate>
+		
+		<guid>https://rebootcyber.xyz/posts/lis/</guid>
+		<description>&lt;h1 id=&#34;install-script&#34;&gt;Install script&lt;/h1&gt;
+&lt;p&gt;If you are Artix Linux with runit then you can use what I use for my desktop Linux experience. The script needs
+a little bit of work still and I am working on it. There are still somethings that I don&amp;rsquo;t like but I am close
+if you want to install it you can go to my &lt;a href=&#34;https://github.com/Luharion/Lis&#34;&gt;github&lt;/a&gt; or go to my home page on
+my website. If you are reading this in the future the script is on my website. Just run the command
+&lt;code&gt;curl -LO rebootcyber.xyz/lis.sh&lt;/code&gt; and it should install then run &lt;code&gt;./lis.sh&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;the-future-plans&#34;&gt;The future plans&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;get the script running it on all Artix Linux init system&lt;/li&gt;
+&lt;li&gt;Arch Linux version&lt;/li&gt;
+&lt;li&gt;custom program list&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+	</item>
+	
+	<item>
+		<title>Cybersecurity Homelab for Dectection and Monitoring</title>
+		<link>https://rebootcyber.xyz/posts/cybersecurity-homelab-for-dectection-and-monitoring/</link>
+		<pubDate>Fri, 07 Oct 2022 14:21:08 -0500</pubDate>
+		
+		<guid>https://rebootcyber.xyz/posts/cybersecurity-homelab-for-dectection-and-monitoring/</guid>
+		<description>&lt;h1 id=&#34;cybersecurity-homelab-for-dectection--monitoring&#34;&gt;Cybersecurity homelab for dectection &amp;amp; monitoring&lt;/h1&gt;
+&lt;h1 id=&#34;building-a-cybersecurity-homelab-for-detection--monitoring&#34;&gt;Building a cybersecurity homelab for detection &amp;amp; monitoring&lt;/h1&gt;
+&lt;p&gt;This homelab will help you apply concepets used in real-world large-scale/enterprise infrastructe&lt;/p&gt;
+&lt;h2 id=&#34;what-is-a-homelab&#34;&gt;What is a homelab&lt;/h2&gt;
+&lt;p&gt;A homelab is a place where you can safely do experiments without messing anything up&lt;/p&gt;
+&lt;h2 id=&#34;content&#34;&gt;Content&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;installing VMware Workstation as hypervisor&lt;/li&gt;
+&lt;li&gt;Configuring Pfsense firewall for network segmentation &amp;amp; security&lt;/li&gt;
+&lt;li&gt;Configuring Security Onion as an all-in-one IDS, Security, and Log Management solution&lt;/li&gt;
+&lt;li&gt;Configuring Kali Linux as an attack machine&lt;/li&gt;
+&lt;li&gt;Configuring Windows Server 2019 as a DC&lt;/li&gt;
+&lt;li&gt;Configuring Windows server&lt;/li&gt;
+&lt;li&gt;Configuring Splunk&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/topology.png&#34; alt=&#34;network topology&#34;  /&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;downloading--installing-vmware-workstation-pro&#34;&gt;Downloading &amp;amp; installing vmware workstation pro&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html&#34;&gt;VMware workstation pro&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;configuring-pfsense&#34;&gt;Configuring Pfsense&lt;/h2&gt;
+&lt;p&gt;Pfsense will be configured as a firewall to segment our private homelab network and will be only accessible from our Kali Linux VM&lt;/p&gt;
+&lt;p&gt;Click &amp;ldquo;Create a new Virtual Machine&amp;rdquo; on VMware Workstation homescreen&lt;/p&gt;
+&lt;p&gt;Make sure &amp;ldquo;Typical (recommenced)&amp;rdquo; is selected and click Next.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/start.png&#34; alt=&#34;network topology&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Click browser and navigate to the folder where your Pfsense file is located.&lt;/p&gt;
+&lt;p&gt;Click Next.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/os.png&#34; alt=&#34;iso&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Rename your Virtual Machine. Preferably &amp;ldquo;pf-l1&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Click next&lt;/p&gt;
+&lt;p&gt;20GB disk size is sufficient for this VM&lt;/p&gt;
+&lt;p&gt;Ensure that the &amp;ldquo;Split virtual disk into multiple files&amp;rdquo; option is selected&lt;/p&gt;
+&lt;p&gt;Click next.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/disk.png&#34; alt=&#34;disk&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Click &amp;ldquo;Customize Hardware&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Increase the memory to 2GB&lt;/p&gt;
+&lt;p&gt;Add 5 network adapters and correspond them with VMnet interface as shown below. Then click finsh&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/network.png&#34; alt=&#34;network&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;The Pfsense machine will power on and start with this screen. Accept all the defaults.Pfsense will configure and reboot. &lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/Pfsense.png&#34; alt=&#34;Pfsense&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Ones you are in the home screen of Pfsense we will get start setting up network adapters.&lt;/p&gt;
+&lt;p&gt;Enter option 1&lt;/p&gt;
+&lt;p&gt;**Should VLANS be set up now [y:n]?:**n&lt;/p&gt;
+&lt;p&gt;Enter &lt;strong&gt;em0, em1, em2, em3, em4 &amp;amp; em5&lt;/strong&gt; respectively for each consecutive question&lt;/p&gt;
+&lt;p&gt;**Do you want to proceed [y:n]?:**y&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/em.png&#34; alt=&#34;em&#34;  /&gt;
+ &lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/em2.png&#34; alt=&#34;em2&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Enter option 2 We&amp;rsquo;ll start with the LAN interface (2) The IP address &lt;strong&gt;192.168.1.1&lt;/strong&gt; is going to be used to access the Pfsense WebGUI via the Kali Machine use the configuration below for the LAN interface.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/opt1.png&#34; alt=&#34;opt1&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Use the configuration below for the OPT1 interface.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/opt1-1.png&#34; alt=&#34;opt1-1&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Use the configuration below for the OPT2 interface&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/opt2.png&#34; alt=&#34;opt2&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Leave the OPT3 interface without an IP as it is going to have the span port with traffic that Security Onion will be monitoring. Use the configuration for the OPT4 interface.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/opt4.png&#34; alt=&#34;opt4&#34;  /&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;configuring-security-onion&#34;&gt;Configuring Security Onion&lt;/h2&gt;
+&lt;p&gt;This will be the all-in-one IDS,Security Monitoring, and Log Management solution &lt;a href=&#34;https://github.com/Security-Onion-Solutions/securityonion/blob/master/VERIFY_ISO.md&#34;&gt;Download the Security Onion ISO file from here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Select Typical installation and click next.&lt;/p&gt;
+&lt;p&gt;Installer disc image file, SO ISO file path and Click Next.&lt;/p&gt;
+&lt;p&gt;On the next screen chose Linux, CentOS 7 64-Bit and click Next.&lt;/p&gt;
+&lt;p&gt;Name the VM l1-sec and click next.&lt;/p&gt;
+&lt;p&gt;Minimum 200GB but if you can use 400GB&lt;/p&gt;
+&lt;p&gt;Then click &amp;ldquo;Customize Hardware&amp;rdquo; and do the following&lt;/p&gt;
+&lt;p&gt;~Change memory to 4-32GB&lt;/p&gt;
+&lt;p&gt;~ Add two Network Adapters and assign them Vmnet4 &amp;amp; Vmnet5 respectively.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/sec.png&#34; alt=&#34;sec&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Power on the virtual machine and click enter when prompted&lt;/p&gt;
+&lt;p&gt;After the initial stages of loading, type &amp;ldquo;yes&amp;rdquo; when prompted&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/sec1.png&#34; alt=&#34;sec1&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Set a username &amp;amp; password&lt;/p&gt;
+&lt;p&gt;After Security Onion reboots, we will finish up the install.&lt;/p&gt;
+&lt;p&gt;Enter the Username &amp;amp; password.&lt;/p&gt;
+&lt;p&gt;Select &amp;ldquo;Yes&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/sec2.png&#34; alt=&#34;sec2.png&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Select the EVAL option&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/sec3.png&#34; alt=&#34;sec3.png&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Type &amp;ldquo;AGREE&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/sec4.png&#34; alt=&#34;sec4&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Select &amp;ldquo;Standard&amp;rdquo; &lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/sec5.png&#34; alt=&#34;sec5&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Set a homename&lt;/p&gt;
+&lt;p&gt;Click the space bar to select ens33 as the management interface&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/sec6.png&#34; alt=&#34;sec6&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Set the addressing to DHCP.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/sec7.png&#34; alt=&#34;sec7&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Select &amp;ldquo;YES&amp;rdquo; at the next prompt&lt;/p&gt;
+&lt;p&gt;Select &amp;ldquo;OK&amp;rdquo; at the next prompt.&lt;/p&gt;
+&lt;p&gt;Select &amp;ldquo;Direct&amp;rdquo; for the next prompt.&lt;/p&gt;
+&lt;p&gt;Select &amp;ldquo;ens35&amp;rdquo; as the monitor Interface.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/sec8.png&#34; alt=&#34;sec8&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Select &amp;ldquo;Automatic&amp;rdquo; for the OS patch schedule.&lt;/p&gt;
+&lt;p&gt;Accept the default home network IP.&lt;/p&gt;
+&lt;p&gt;Accept all the defaults.&lt;/p&gt;
+&lt;p&gt;Enter an email address and password for the admin account.&lt;/p&gt;
+&lt;p&gt;Select &amp;ldquo;IP&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/sec9.png&#34; alt=&#34;sec9.png&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Select &amp;ldquo;Yes&amp;rdquo; for the NTP server &amp;amp; accept the defaults&lt;/p&gt;
+&lt;p&gt;Take note of your final settings before proceeding! If possible take a screenshot&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Most important detail is the IP address for web access&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Select &amp;ldquo;YES&amp;rdquo;&lt;/p&gt;
+&lt;h3 id=&#34;seconionmgmtanalyst-machine&#34;&gt;SecOnionMgmt/Analyst Machine&lt;/h3&gt;
+&lt;p&gt;After installing Security Onion, having access to the web interface will be done from an external Ubuntu Desktop simulating a SOC/Security Analyst accessing a SIEM or any other tool from their device.&lt;/p&gt;
+&lt;p&gt;In order to this, you’ll first have to configure an Ubuntu Desktop. This is a very easy process and I’ll not be covering it in this write-up but it is covered in the video. Be sure to use all the default settings for the Ubuntu Desktop configuration.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://ubuntu.com/download/desktop&#34;&gt;Download Ubuntu Desktop&lt;/a&gt; &lt;a href=&#34;https://getlabsdone.com/10-easy-steps-to-install-ubuntu-19-04-on-vmware-workstation-15/&#34;&gt;Install Ubuntu Desktop&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;After this installation, run the ifconfig command on the Ubuntu Machine and take note of its IP Address.&lt;/p&gt;
+&lt;p&gt;Go back to your SO instance and run the following command&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;	sudo so-allow
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Enter your password&lt;/p&gt;
+&lt;p&gt;Type a and wait for the process to complete&lt;/p&gt;
+&lt;p&gt;Type in the IP address of your Ubuntu desktop&lt;/p&gt;
+&lt;p&gt;Navigate to the SO IP on your ubuntu desktop&lt;/p&gt;
+&lt;h2 id=&#34;configuring-kali-linux&#34;&gt;Configuring Kali Linux&lt;/h2&gt;
+&lt;p&gt;Kali Linux will be used as a attcker machine&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/&#34;&gt;Download the Kali Linux ISO&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Before power on on the VM, change the Network Adapter to Vmnet2 and set the memory to 4GB, then power it on&lt;/p&gt;
+&lt;p&gt;Go throught the install&lt;/p&gt;
+&lt;h2 id=&#34;pfsense-interfaces-and-rules&#34;&gt;Pfsense interfaces and Rules&lt;/h2&gt;
+&lt;p&gt;We will use the Kali VM to setup Pfsense&lt;/p&gt;
+&lt;p&gt;Navigate to the web browser and search for 192.168.1.1&lt;/p&gt;
+&lt;p&gt;The default credence are &amp;ldquo;admin&amp;rdquo; &amp;amp; &amp;ldquo;Pfsense&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;You&amp;rsquo;ll be greeted with a &amp;ldquo;Wizard/Pfsense setup/&amp;rdquo; page.&lt;/p&gt;
+&lt;p&gt;Set the DNS server as 8.8.8.8 and 4.4.4.4&lt;/p&gt;
+&lt;p&gt;Then chose your timezone&lt;/p&gt;
+&lt;p&gt;At step &lt;strong&gt;4 of 9&lt;/strong&gt;, untick the last two options.&lt;/p&gt;
+&lt;p&gt;at step &lt;strong&gt;6 of 9&lt;/strong&gt;, set a new admin password.&lt;/p&gt;
+&lt;h3 id=&#34;set-up-interface&#34;&gt;Set up Interface&lt;/h3&gt;
+&lt;p&gt;Click on interface&lt;/p&gt;
+&lt;p&gt;Select LAN&lt;/p&gt;
+&lt;p&gt;For &amp;ldquo;Description&amp;rdquo;, Change LAN to KALI as this is the Kali Interface&lt;/p&gt;
+&lt;p&gt;Scroll all the way down and Click Save&lt;/p&gt;
+&lt;p&gt;Then do this for the rest of the interfaces as show below&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/Pfsense.png&#34; alt=&#34;Pfsense&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;For OPT3 be sure to Enable interface.&lt;/p&gt;
+&lt;p&gt;Back at Interfaces assignment select bridges&lt;/p&gt;
+&lt;p&gt;Click add&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/Pfsense1.png&#34; alt=&#34;Pfsense1&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Select &lt;strong&gt;VictimNetwork&lt;/strong&gt; as the Member Interface&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/Pfsense2.png&#34; alt=&#34;Pfsense3&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Then select &lt;strong&gt;Display Advanced&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Under &lt;strong&gt;Advanced Configuration&lt;/strong&gt; for &lt;strong&gt;Span Port&lt;/strong&gt;, select &lt;strong&gt;&amp;ldquo;SPANPORT&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Scroll all the way down and Click &lt;strong&gt;Save&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/Pfsense3.png&#34; alt=&#34;Pfsense3&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Click Firewall &amp;raquo; Rules&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/Pfsense4.png&#34; alt=&#34;Pfsense4&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Select the add button with arrow pointed downward&lt;/p&gt;
+&lt;p&gt;~Under &amp;ldquo;edit firewall rule&amp;rdquo; for Protocol select ANY&lt;/p&gt;
+&lt;p&gt;~ Scroll all the down and click save&lt;/p&gt;
+&lt;p&gt;This is most of what we need to do in Pfsense&lt;/p&gt;
+&lt;h3 id=&#34;configing-windows-server-as-a-domain-controller&#34;&gt;Configing Windows server as a domain controller&lt;/h3&gt;
+&lt;p&gt;You can follow The Cyber Mentor guide to set up Active Directory and Windows 10 VM. We just need to set up the network stuff.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=xftEuVQ7kY0&#34;&gt;The Cyber Mentor&amp;rsquo;s youtube guide&lt;/a&gt; &lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/server1.png&#34; alt=&#34;server1&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Navigate to &lt;strong&gt;Control Panel &amp;gt; Network and Internet &amp;gt; Network Connections&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/server19.png&#34; alt=&#34;server19&#34;  /&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;windows-10-host-networking&#34;&gt;Windows 10 host networking&lt;/h3&gt;
+&lt;p&gt;Naviage to Network Adapter settings&lt;/p&gt;
+&lt;p&gt;Right-click on Ethernet0 and select properties&lt;/p&gt;
+&lt;p&gt;Select IPv4 and set the ip address 192.168.2.21, use 192.168.2.1 as the default gateway, and use 192.168.2.10 as the DNS server.&lt;/p&gt;
+</description>
+	</item>
+	
+	<item>
+		<title>Uptime Kuma</title>
+		<link>https://rebootcyber.xyz/posts/uptime-kuma/</link>
+		<pubDate>Fri, 07 Oct 2022 14:18:28 -0500</pubDate>
+		
+		<guid>https://rebootcyber.xyz/posts/uptime-kuma/</guid>
+		<description>&lt;h1 id=&#34;uptime-kuma&#34;&gt;uptime-kuma&lt;/h1&gt;
+&lt;h1 id=&#34;uptime-kuma-1&#34;&gt;UPTIME-KUMA&lt;/h1&gt;
+&lt;p&gt;What is Uptime-Kuma? Uptime-Kuma is a self-hosted monitoring tool. I will say at first I thought this was dumb. Why would I need a uptime monitor system? When I run it just to give it a chance I fell in love with it because of one feature. The feature notification. You can send notification to email, discord, telegram, and etc.&lt;/p&gt;
+&lt;h2 id=&#34;what-are-the-ways-to-install-it&#34;&gt;What are the ways to install it.&lt;/h2&gt;
+&lt;p&gt;You can install using docker, install script, or build it. I use docker because I love docker. I will do an article on it later.&lt;/p&gt;
+&lt;h3 id=&#34;how-do-you-install-it&#34;&gt;How do you install it&lt;/h3&gt;
+&lt;p&gt;I will show how to install it using docker. You can install &lt;a href=&#34;https://docs.docker.com/engine/install/debian/&#34;&gt;docker&lt;/a&gt;. Then use &lt;code&gt;docker run -d --restart=always -p 3001:3001 -v uptime-kuma:/app/data --name uptime-kuma louislam/uptime-kuma:1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Once it is up and ready if you have never docker I would give about a minutes. You can check the logs if you want to.&lt;/p&gt;
+&lt;h3 id=&#34;set-up-uptime-kuma&#34;&gt;Set up uptime-kuma&lt;/h3&gt;
+&lt;p&gt;You need to go to your server ip like this http://10.10.10.250:3001. One you are there you should see something like this&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/uptime-dash.png&#34; alt=&#34;dashboard&amp;amp;quot;&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Then click on &amp;ldquo;Add New Monitor&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/uptime-monitor.png&#34; alt=&#34;add&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;The monitoring type: http/https is a website you want to monitor, TCP port is a port you want to monitor, ping is when you just want to ping a server, and dns request of the machine.I am going to do ping. You need to set a friendly name. This is the name you will see in Uptime Kuma. Hostname is the ip of machine you want to monitor. Then just click save. You are done but we will setup email.&lt;/p&gt;
+&lt;h3 id=&#34;setting-up-email-with-uptime-kuma&#34;&gt;Setting up email with Uptime Kuma&lt;/h3&gt;
+&lt;p&gt;Click on setting up notifications.The on notification type and find Email(SMTP). It should look like this.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/uptime-email.png&#34; alt=&#34;email&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Then set it up I can not tell you this because every email server is different but I will give you an example.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/images/uptime-email-set.png&#34; alt=&#34;setup&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Once this is set then you should be sent emails when the machine you are monitoring goes down.&lt;/p&gt;
+&lt;h3 id=&#34;the-closing&#34;&gt;The closing&lt;/h3&gt;
+&lt;p&gt;I would recommend you playing around with Uptime Kuma.&lt;/p&gt;
+</description>
+	</item>
+	
+	<item>
+		<title>Sata Cable Hack</title>
+		<link>https://rebootcyber.xyz/posts/sata-cable-hack/</link>
+		<pubDate>Fri, 07 Oct 2022 14:15:51 -0500</pubDate>
+		
+		<guid>https://rebootcyber.xyz/posts/sata-cable-hack/</guid>
+		<description>&lt;h1 id=&#34;sata-cable-hack&#34;&gt;SATA CABLE HACK&lt;/h1&gt;
+&lt;h2 id=&#34;what-is-a-sata-cable&#34;&gt;What is a SATA cable&lt;/h2&gt;
+&lt;p&gt;SATA(Serial Advanced Technology Attachment) cable is an IDE standard first released in 2001 for connecting devices like optical drives and hard drives to the motherboard&lt;/p&gt;
+&lt;h2 id=&#34;how-does-the-hack-work&#34;&gt;How does the hack work&lt;/h2&gt;
+&lt;p&gt;The SATA cable interfaces can emit radio signal during certain read and write operation. This will main be used in air-gap system because this systems do not have wireless connection.An attacker can use malware to hijack legitimate software process to preform vert specific read/wire functions that reflect the contents of the data that the attacker wants. You will need to first get access to this machines. You can use a bad USB or make some social engineering. This attack can only receive data about 4ft away. If they go further than that then they will get error bits and this attack only transfer at 1 bit/sec.&lt;/p&gt;
+&lt;h2 id=&#34;how-to-stop-this-attack&#34;&gt;How to stop this attack&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;limit the amount of users to this air-gap systems&lt;/li&gt;
+&lt;li&gt;Update the systems as much as possible&lt;/li&gt;
+&lt;li&gt;You can flood the 6GHz range with junk data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;what-is-the-future-of-this-attack&#34;&gt;What is the future of this attack&lt;/h3&gt;
+&lt;p&gt;This attack is not a really big problem &lt;strong&gt;RIGHT NOW&lt;/strong&gt; but could be in the future attack. This only really effect air-gap systems because there are easier and better attacks if a systems is connect to the internet.&lt;/p&gt;
+&lt;p&gt;This resource I used&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2207.07413&#34;&gt;The research paper&lt;/a&gt;
+&lt;a href=&#34;https://www.lifewire.com/serial-ata-sata-2626009&#34;&gt;An article on the subject&lt;/a&gt;&lt;/p&gt;
+</description>
+	</item>
+	
+	<item>
+		<title>Pfsense Opendns</title>
+		<link>https://rebootcyber.xyz/posts/pfsense-opendns/</link>
+		<pubDate>Fri, 07 Oct 2022 14:13:22 -0500</pubDate>
+		
+		<guid>https://rebootcyber.xyz/posts/pfsense-opendns/</guid>
+		<description>&lt;h1 id=&#34;what-is-opendns&#34;&gt;What is OpenDNS?&lt;/h1&gt;
+&lt;p&gt;OpenDNS is a DNS sinkhole. This allows you to stop people from going to certain sites that you don&amp;rsquo;t want them to go to. There is two version of OpenDNS called Umbrella this is the enterprise version and cost money. We will be using the consumer version called OpenDNS home.&lt;/p&gt;
+&lt;p&gt;First you need to set up an account. You will need an email address, password, and public IP. Ones you login in. You are ready to start&lt;/p&gt;
+&lt;h2 id=&#34;how-to-set-up-opendns&#34;&gt;How to set up OpenDNS?&lt;/h2&gt;
+&lt;p&gt;First go to settings. Then type in your public IP. You can go to &lt;a href=&#34;https://whatismyipaddress.com/&#34;&gt;What is my IP&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Then go to web content filtering. Set what you want to block. After this you can set up your DNS server in your router as&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;208.67.222.123&lt;/li&gt;
+&lt;li&gt;208.67.220.123&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;how-do-i-set-this-up-for-pfsense&#34;&gt;How do I set this up for Pfsense&lt;/h3&gt;
+&lt;p&gt;First login into your Pfsense router through the web portal.&lt;/p&gt;
+&lt;p&gt;Go to System/General Setup.&lt;/p&gt;
+&lt;p&gt;Then add a DNS server and use the 208 address above&lt;/p&gt;
+&lt;p&gt;Then save the changes.&lt;/p&gt;
+&lt;p&gt;Final we need to force ever network enable devices to use OpenDNS.&lt;/p&gt;
+&lt;p&gt;Go to Service/DHCP Server/ LAN&lt;/p&gt;
+&lt;p&gt;In the DNS setting type the above IP address and save&lt;/p&gt;
+&lt;p&gt;Final reboot your router&lt;/p&gt;
+&lt;h3 id=&#34;how-will-this-effect-my-network&#34;&gt;How will this effect my network&lt;/h3&gt;
+&lt;p&gt;This will force you not to go to sites than are part of the category that you set. If you do not want to effect you much then set to stop malware and stuff like that&lt;/p&gt;
+</description>
+	</item>
+	
+	<item>
+		<title>Pihole</title>
+		<link>https://rebootcyber.xyz/posts/pihole/</link>
+		<pubDate>Fri, 07 Oct 2022 14:06:43 -0500</pubDate>
+		
+		<guid>https://rebootcyber.xyz/posts/pihole/</guid>
+		<description>&lt;h1 id=&#34;pihole&#34;&gt;PiHole&lt;/h1&gt;
+&lt;p&gt;Pi-Hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network.
+This allows you to block unwanted stuff and websites on your private network.DNS Sinkhole is a mechanism aimed at protecting users by intercepting DNS request attempting to connect to known malicious or unwanted domains and returning a false, or rather controlled IP address. The controlled IP address points to a sinkhole server defined by the DNS sinkhole administrator.&lt;/p&gt;
+&lt;h1 id=&#34;how-do-you-set-up-a-pi-hole&#34;&gt;How do you set up a Pi-Hole&lt;/h1&gt;
+&lt;p&gt;First you will need a Linux box on a server or you can use Docker.Linux can be installed on an old laptop/desktop, or any raspberry pi. I will be using Ubuntu 20.04 LTS server to do this.&lt;/p&gt;
+&lt;p&gt;First you want to run &lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt full-upgrade&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The creator of PiHole made a cool script to install automatically&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;wget -O basic-install.sh https://install.pi-hole.net sudo bash basic-install.sh&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/google.png&#34; alt=&#34;Dns provider&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;You want to select Google DNS. For all other options just press enter&lt;/p&gt;
+&lt;h2 id=&#34;user-interface&#34;&gt;User interface&lt;/h2&gt;
+&lt;p&gt;You can go to your server IP in your web browser and the script will give you a password for the login. You can save this password somewhere or you can run&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pihole -a -p&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This will ask you to set a new password or not have a password. If you do not want anyone else on the pihole administrator page then set a strong password&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/dash.png&#34; alt=&#34;the dashboard of PiHole&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;If you go to &amp;ldquo;Group Management&amp;rdquo; then &amp;ldquo;Adlists&amp;rdquo;. You can set up websites you do not want people to go to on your network.Then go to Tools then Update Gravity to update the list.
+There are adlist you can use get a lot of domains block or whitelisted depending on what you want to do with it. A poplar websites to go to is &lt;a href=&#34;https://firebog.net/&#34;&gt;PiHole adlist&lt;/a&gt; .
+You can add this and it will block those domains. If you want to unblock a domains.&lt;/p&gt;
+&lt;h2 id=&#34;how-do-i-add-this-to-my-router&#34;&gt;How do I add this to my router&lt;/h2&gt;
+&lt;p&gt;You need to log into your router. You router login will be different then everyone else. So look this up and normal the first link will tell you your default login. Then go to the DNS setting and change it to your server IP address. &lt;strong&gt;So router will not allow you to change the DNS server settings.&lt;/strong&gt;
+At that point you need to change then on every device you want to be connect to the PiHole.&lt;/p&gt;
+&lt;p&gt;If you want to get rid of just one domain then go to &amp;ldquo;Query Logs&amp;rdquo;. Then if your IP address and find that request. Finally click the &amp;ldquo;Whitelist&amp;rdquo; button.&lt;/p&gt;
+&lt;p&gt;Now you do not have to see malicious links and ads. This can also be used to stop tracker and other stuff.&lt;/p&gt;
+</description>
+	</item>
+	
+	<item>
+		<title>How to Pass the Comptia Network&#43;</title>
+		<link>https://rebootcyber.xyz/posts/how-to-pass-the-comptia-network&#43;/</link>
+		<pubDate>Fri, 07 Oct 2022 14:01:19 -0500</pubDate>
+		
+		<guid>https://rebootcyber.xyz/posts/how-to-pass-the-comptia-network&#43;/</guid>
+		<description>&lt;h1 id=&#34;how-to-pass-the-comptia-network&#34;&gt;How to Pass The Comptia Network+&lt;/h1&gt;
+&lt;h1 id=&#34;what-is-the-network&#34;&gt;What is the Network+&lt;/h1&gt;
+&lt;p&gt;The CompTIA Network+ is a basic network cert. That goes over some general network stuff. Your companies may need you need to get certification for a promotion.&lt;/p&gt;
+&lt;h2 id=&#34;what-resource-use-you-use&#34;&gt;What resource use you use?&lt;/h2&gt;
+&lt;p&gt;Professor Messor is a great resources. He goes thorough the objective in order. This could be a good or bad thing depending on your learning style. A another amazing resources is &lt;a href=&#34;https://www.udemy.com/user/jason-dion/&#34;&gt;Jason Dion&lt;/a&gt;. His video can easily be made into flashcards. This is what I use for flashcards &lt;a href=&#34;https://apps.ankiweb.net/&#34;&gt;anki&lt;/a&gt; . His has practice exams. They are good but not like the exam. The exam did not have questions like &amp;ldquo;Bob is having trouble with getting a IP. What is most likely the issue?&amp;rdquo; They are still good to do to see what areas you need to work on. You can find deals with his Udemy on the weekend.&lt;/p&gt;
+&lt;p&gt;If you are having troubles with subnetting like I did then you can use this &lt;a href=&#34;https://subnetipv4.com/&#34;&gt;resource&lt;/a&gt;. The chart he uses is really easy to get and remember. For the exam remember 1, 2, 4, 8, 16, 32, 64, 128, 256. This is for the amount of host that can be in a subnet. When it comes to what to practice just do /32 - /16. The smaller subnets are good to know but not I did not see it on the exam.&lt;/p&gt;
+&lt;h2 id=&#34;how-long-do-you-need-to-study-for&#34;&gt;How long do you need to study for?&lt;/h2&gt;
+&lt;p&gt;This exam has a lot of material. If you do not get network concepts ever well like me. I would say 3-4 months of studying. If you can easy understand network concepts then maybe 2-3 months.&lt;/p&gt;
+&lt;h3 id=&#34;based-of-what-i-saw-on-the-exam-what-should-you-study&#34;&gt;Based of what I saw on the exam what should you study&lt;/h3&gt;
+&lt;p&gt;Remember this is what type of question I got on the exam. &lt;strong&gt;YOU MAY NOT SEE THIS ON THE EXAM&lt;/strong&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;DHCP&lt;/li&gt;
+&lt;li&gt;Network tools&lt;/li&gt;
+&lt;li&gt;Network Commands&lt;/li&gt;
+&lt;li&gt;The OSI model&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This concepts was really what I wished I study more but I did not find the time&lt;/p&gt;
+&lt;h4 id=&#34;important-notes&#34;&gt;Important notes&lt;/h4&gt;
+&lt;p&gt;You will pass. If you think you will not pass then you will not pass. You got this. &lt;strong&gt;GOOD LUCK&lt;/strong&gt;&lt;/p&gt;
+</description>
+	</item>
+	
+	<item>
+		<title>Password</title>
+		<link>https://rebootcyber.xyz/posts/password/</link>
+		<pubDate>Fri, 07 Oct 2022 13:54:49 -0500</pubDate>
+		
+		<guid>https://rebootcyber.xyz/posts/password/</guid>
+		<description>&lt;p&gt;Password-Manager&lt;/p&gt;
+&lt;h1 id=&#34;password-manager&#34;&gt;Password-Manager&lt;/h1&gt;
+&lt;h1 id=&#34;what-is-a-password-manager&#34;&gt;What is a password manager&lt;/h1&gt;
+&lt;p&gt;A password manager is a place to keep all of your password safe. It is a really important you have one. This allows you to have complex passwords without remember them. If you don&amp;rsquo;t have a password manager please get one.&lt;/p&gt;
+&lt;h2 id=&#34;type-of-password-manager&#34;&gt;Type of password manager&lt;/h2&gt;
+&lt;p&gt;In my option there are two types of password manager. Their is offline and online password manager.&lt;/p&gt;
+&lt;h2 id=&#34;the-different-between-offline-and-online-password-manager&#34;&gt;The different between offline and online password manager&lt;/h2&gt;
+&lt;p&gt;Offline password manager. It is a password manager where your password are stored locally. This has cons and pros. The pros are that you don&amp;rsquo;t have to worry about data breaches. You also do not need an internet connection. This could use offline.&lt;/p&gt;
+&lt;p&gt;Online password manager. Online password manager are where your password are stored locally. It is really good if you want your password if you want your passwords in the cloud. You have to were about data breaches.&lt;/p&gt;
+&lt;p&gt;How to choose a password manager&lt;/p&gt;
+&lt;p&gt;If you are choosing an offline password then use keepass or pass unix password manager. Online password manager you need to make sure their are encryption your passwords. &lt;strong&gt;PLAIN TEXT&lt;/strong&gt; is bad and should not be used. This means don&amp;rsquo;t use a notepad or write them down.&lt;/p&gt;
+&lt;h2 id=&#34;how-to-setup-keepass&#34;&gt;How to setup keepass&lt;/h2&gt;
+&lt;p&gt;First you want to download &lt;a href=&#34;https://keepass.info/download.html&#34;&gt;Keepass&lt;/a&gt; This may vary on different OS.&lt;/p&gt;
+&lt;p&gt;First you need to make a database. &lt;strong&gt;Remember WHERE YOU SAVE THIS FILE&lt;/strong&gt;. &lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/database.png&#34; alt=&#34;Database&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Then you need to set a password. Make this password a good password but also easy to remember. If you lose this password. You will not be able to see your password.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/pass.png&#34; alt=&#34;Keepass password&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Finally give your database a name.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/name.png&#34; alt=&#34;Database name&#34;  /&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;how-to-set-up-bitwarrden&#34;&gt;How to set up Bitwarrden&lt;/h2&gt;
+&lt;p&gt;Just go to &lt;a href=&#34;https://bitwarden.com/&#34;&gt;Bitwarrden&lt;/a&gt; and set up an account. Make a strong and easy  password to remember.&lt;/p&gt;
+</description>
+	</item>
+	
+	<item>
+		<title></title>
+		<link>https://rebootcyber.xyz/about/</link>
+		<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+		
+		<guid>https://rebootcyber.xyz/about/</guid>
+		<description>&lt;h1 id=&#34;about-me&#34;&gt;About me&lt;/h1&gt;
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ whoami
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I am a nerd, an IT professional, and an aspiring cyber security professional. I enjoy a wide range of IT topics, but my goal is to get into cyber security. I was very fortunate to get into IT. I have about a year and a half experience, I hold the CompTIA A+ 1001 and Network+ n10-008, and I have some projects to tech myself some of the fundamentals. Luckily, I was able to get my foot in the door, and I plan to get it my best shot.&lt;/p&gt;
+&lt;h1 id=&#34;the-reason-for-this-blog&#34;&gt;The reason for this blog&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nmap -sC -sV -o
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It&amp;rsquo;s my time to give back. A lot of content creators I follow encourage people to put their experience. I do a lot of random projects, why not put it out there and it may help someone so why not. This is also kinda of a selfish reason to because I use this site for documation instead of having my bookmark file being 200 lines.&lt;/p&gt;
+&lt;p&gt;I would like to thank you for taking the time out of your day to stop by this blog. I hope that you find something useful, and I hope that you can also share your experience as well&lt;/p&gt;
+&lt;h2 id=&#34;how-can-you-contact-me&#34;&gt;How can you contact me?&lt;/h2&gt;
+&lt;p&gt;The best way is to email me at &lt;a href=&#34;mailto:liam@rebootcyber.xyz&#34;&gt;liam@rebootcyber.xyz&lt;/a&gt;&lt;/p&gt;
+</description>
+	</item>
+	
+	<item>
+		<title>Archive</title>
+		<link>https://rebootcyber.xyz/archives/</link>
+		<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+		
+		<guid>https://rebootcyber.xyz/archives/</guid>
+		<description></description>
+	</item>
+	
+	<item>
+		<title>Search</title>
+		<link>https://rebootcyber.xyz/archive/</link>
+		<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+		
+		<guid>https://rebootcyber.xyz/archive/</guid>
+		<description></description>
+	</item>
+	
+	</channel>
+</rss>

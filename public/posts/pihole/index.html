@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Pihole | Liam Blog</title>
+<meta name="keywords" content="DNS, Self-Hosted">
+<meta name="description" content="PiHole Pi-Hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. This allows you to block unwanted stuff and websites on your private network.DNS Sinkhole is a mechanism aimed at protecting users by intercepting DNS request attempting to connect to known malicious or unwanted domains and returning a false, or rather controlled IP address.">
+<meta name="author" content="">
+<link rel="canonical" href="https://rebootcyber.xyz/posts/pihole/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://rebootcyber.xyz/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://rebootcyber.xyz/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://rebootcyber.xyz/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://rebootcyber.xyz/apple-touch-icon.png">
+<link rel="mask-icon" href="https://rebootcyber.xyz/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Pihole" />
+<meta property="og:description" content="PiHole Pi-Hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. This allows you to block unwanted stuff and websites on your private network.DNS Sinkhole is a mechanism aimed at protecting users by intercepting DNS request attempting to connect to known malicious or unwanted domains and returning a false, or rather controlled IP address." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rebootcyber.xyz/posts/pihole/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-07T14:06:43-05:00" />
+<meta property="article:modified_time" content="2022-10-07T14:06:43-05:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Pihole"/>
+<meta name="twitter:description" content="PiHole Pi-Hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. This allows you to block unwanted stuff and websites on your private network.DNS Sinkhole is a mechanism aimed at protecting users by intercepting DNS request attempting to connect to known malicious or unwanted domains and returning a false, or rather controlled IP address."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://rebootcyber.xyz/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Pihole",
+      "item": "https://rebootcyber.xyz/posts/pihole/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Pihole",
+  "name": "Pihole",
+  "description": "PiHole Pi-Hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. This allows you to block unwanted stuff and websites on your private network.DNS Sinkhole is a mechanism aimed at protecting users by intercepting DNS request attempting to connect to known malicious or unwanted domains and returning a false, or rather controlled IP address.",
+  "keywords": [
+    "DNS", "Self-Hosted"
+  ],
+  "articleBody": "PiHole Pi-Hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. This allows you to block unwanted stuff and websites on your private network.DNS Sinkhole is a mechanism aimed at protecting users by intercepting DNS request attempting to connect to known malicious or unwanted domains and returning a false, or rather controlled IP address. The controlled IP address points to a sinkhole server defined by the DNS sinkhole administrator.\nHow do you set up a Pi-Hole First you will need a Linux box on a server or you can use Docker.Linux can be installed on an old laptop/desktop, or any raspberry pi. I will be using Ubuntu 20.04 LTS server to do this.\nFirst you want to run sudo apt update \u0026\u0026 sudo apt full-upgrade\nThe creator of PiHole made a cool script to install automatically\nwget -O basic-install.sh https://install.pi-hole.net sudo bash basic-install.sh\nYou want to select Google DNS. For all other options just press enter\nUser interface You can go to your server IP in your web browser and the script will give you a password for the login. You can save this password somewhere or you can run\npihole -a -p\nThis will ask you to set a new password or not have a password. If you do not want anyone else on the pihole administrator page then set a strong password\nIf you go to “Group Management” then “Adlists”. You can set up websites you do not want people to go to on your network.Then go to Tools then Update Gravity to update the list. There are adlist you can use get a lot of domains block or whitelisted depending on what you want to do with it. A poplar websites to go to is PiHole adlist . You can add this and it will block those domains. If you want to unblock a domains.\nHow do I add this to my router You need to log into your router. You router login will be different then everyone else. So look this up and normal the first link will tell you your default login. Then go to the DNS setting and change it to your server IP address. So router will not allow you to change the DNS server settings. At that point you need to change then on every device you want to be connect to the PiHole.\nIf you want to get rid of just one domain then go to “Query Logs”. Then if your IP address and find that request. Finally click the “Whitelist” button.\nNow you do not have to see malicious links and ads. This can also be used to stop tracker and other stuff.\n",
+  "wordCount" : "462",
+  "inLanguage": "en",
+  "datePublished": "2022-10-07T14:06:43-05:00",
+  "dateModified": "2022-10-07T14:06:43-05:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://rebootcyber.xyz/posts/pihole/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Liam Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rebootcyber.xyz/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://rebootcyber.xyz" accesskey="h" title="Liam Blog (Alt + H)">Liam Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://rebootcyber.xyz/about/" title="about">
+                    <span>about</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://rebootcyber.xyz/archive/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://rebootcyber.xyz/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://rebootcyber.xyz" title="rebootcyber.xyz">
+                    <span>rebootcyber.xyz</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Pihole
+    </h1>
+    <div class="post-meta"><span title='2022-10-07 14:06:43 -0500 CDT'>October 7, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="pihole">PiHole<a hidden class="anchor" aria-hidden="true" href="#pihole">#</a></h1>
+<p>Pi-Hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network.
+This allows you to block unwanted stuff and websites on your private network.DNS Sinkhole is a mechanism aimed at protecting users by intercepting DNS request attempting to connect to known malicious or unwanted domains and returning a false, or rather controlled IP address. The controlled IP address points to a sinkhole server defined by the DNS sinkhole administrator.</p>
+<h1 id="how-do-you-set-up-a-pi-hole">How do you set up a Pi-Hole<a hidden class="anchor" aria-hidden="true" href="#how-do-you-set-up-a-pi-hole">#</a></h1>
+<p>First you will need a Linux box on a server or you can use Docker.Linux can be installed on an old laptop/desktop, or any raspberry pi. I will be using Ubuntu 20.04 LTS server to do this.</p>
+<p>First you want to run <code>sudo apt update &amp;&amp; sudo apt full-upgrade</code></p>
+<p>The creator of PiHole made a cool script to install automatically</p>
+<p><code>wget -O basic-install.sh https://install.pi-hole.net sudo bash basic-install.sh</code></p>
+<p><img loading="lazy" src="/google.png" alt="Dns provider"  />
+</p>
+<p>You want to select Google DNS. For all other options just press enter</p>
+<h2 id="user-interface">User interface<a hidden class="anchor" aria-hidden="true" href="#user-interface">#</a></h2>
+<p>You can go to your server IP in your web browser and the script will give you a password for the login. You can save this password somewhere or you can run</p>
+<p><code>pihole -a -p</code></p>
+<p>This will ask you to set a new password or not have a password. If you do not want anyone else on the pihole administrator page then set a strong password</p>
+<p><img loading="lazy" src="/dash.png" alt="the dashboard of PiHole"  />
+</p>
+<p>If you go to &ldquo;Group Management&rdquo; then &ldquo;Adlists&rdquo;. You can set up websites you do not want people to go to on your network.Then go to Tools then Update Gravity to update the list.
+There are adlist you can use get a lot of domains block or whitelisted depending on what you want to do with it. A poplar websites to go to is <a href="https://firebog.net/">PiHole adlist</a> .
+You can add this and it will block those domains. If you want to unblock a domains.</p>
+<h2 id="how-do-i-add-this-to-my-router">How do I add this to my router<a hidden class="anchor" aria-hidden="true" href="#how-do-i-add-this-to-my-router">#</a></h2>
+<p>You need to log into your router. You router login will be different then everyone else. So look this up and normal the first link will tell you your default login. Then go to the DNS setting and change it to your server IP address. <strong>So router will not allow you to change the DNS server settings.</strong>
+At that point you need to change then on every device you want to be connect to the PiHole.</p>
+<p>If you want to get rid of just one domain then go to &ldquo;Query Logs&rdquo;. Then if your IP address and find that request. Finally click the &ldquo;Whitelist&rdquo; button.</p>
+<p>Now you do not have to see malicious links and ads. This can also be used to stop tracker and other stuff.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://rebootcyber.xyz/tags/dns/">DNS</a></li>
+      <li><a href="https://rebootcyber.xyz/tags/self-hosted/">Self-Hosted</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://rebootcyber.xyz">Liam Blog</a></span>
+    </footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

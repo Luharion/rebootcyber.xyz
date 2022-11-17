@@ -1,0 +1,39 @@
+baseURL: "https://rebootcyber.xyz"
+title: Liam Blog
+paginate: 5
+theme: PaperMod
+
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
+
+menu:
+  main:
+    - identifier: about
+      name: about
+      url: /about/
+      weight: 10
+    - identifier: Archive
+      name: Archive
+      url: /Archive/
+      weight: 20
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 40
+    - identifier: rebootcyber
+      name: rebootcyber.xyz
+      url: https://rebootcyber.xyz
+      weight: 50
+
+params:
+    homeInfoParams:
+        Title: Hi I am  Liam, weclome to my  blog
+        Content:
+
+    socialIcons: # optional
+        - name: "github"
+          url: "https://github.com/Luharion"
