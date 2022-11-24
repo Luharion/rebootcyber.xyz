@@ -3,21 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://rebootcyber.xyz/</loc>
-    <lastmod>2022-11-16T15:29:13-06:00</lastmod>
+    <lastmod>2022-11-24T11:59:19-06:00</lastmod>
+  </url><url>
+    <loc>https://rebootcyber.xyz/tags/networking/</loc>
+    <lastmod>2022-11-24T11:59:19-06:00</lastmod>
   </url><url>
     <loc>https://rebootcyber.xyz/posts/</loc>
-    <lastmod>2022-11-16T15:29:13-06:00</lastmod>
+    <lastmod>2022-11-24T11:59:19-06:00</lastmod>
+  </url><url>
+    <loc>https://rebootcyber.xyz/posts/secure-your-linux-server/</loc>
+    <lastmod>2022-11-24T11:59:19-06:00</lastmod>
+  </url><url>
+    <loc>https://rebootcyber.xyz/tags/</loc>
+    <lastmod>2022-11-24T11:59:19-06:00</lastmod>
+  </url><url>
+    <loc>https://rebootcyber.xyz/tags/use/</loc>
+    <lastmod>2022-11-24T11:59:19-06:00</lastmod>
   </url><url>
     <loc>https://rebootcyber.xyz/posts/subdomain-takeover/</loc>
     <lastmod>2022-11-16T15:29:13-06:00</lastmod>
   </url><url>
     <loc>https://rebootcyber.xyz/posts/ip-address/</loc>
-    <lastmod>2022-11-05T11:10:02-05:00</lastmod>
-  </url><url>
-    <loc>https://rebootcyber.xyz/tags/networking/</loc>
-    <lastmod>2022-11-05T11:10:02-05:00</lastmod>
-  </url><url>
-    <loc>https://rebootcyber.xyz/tags/</loc>
     <lastmod>2022-11-05T11:10:02-05:00</lastmod>
   </url><url>
     <loc>https://rebootcyber.xyz/tags/tech/</loc>
@@ -48,9 +54,6 @@
     <lastmod>2022-10-15T15:13:23-05:00</lastmod>
   </url><url>
     <loc>https://rebootcyber.xyz/categories/tech/</loc>
-    <lastmod>2022-10-15T15:13:23-05:00</lastmod>
-  </url><url>
-    <loc>https://rebootcyber.xyz/tags/use/</loc>
     <lastmod>2022-10-15T15:13:23-05:00</lastmod>
   </url><url>
     <loc>https://rebootcyber.xyz/posts/cybersecurity-homelab-for-dectection-and-monitoring/</loc>

@@ -4,9 +4,26 @@ date: 2022-10-07T13:54:49-05:00
 draft: false
 categories: ["tech", "personal"]
 ---
-Password-Manager
 
-# Password-Manager
+# Why you need a strong password
+Password are really important they are basically the key to your inter live. Like if someone knows your banking password they could just steal all of your
+money. Another scenario is that if a hacker got access  to your email then every could reset your password for everything then destroy your entire life.
+
+
+## How to make a strong password
+
+* It's at least 12 characters long. The longer your is password is - the better
+* Use uppercase and lowercase letters, numbers, and special symbols. The more mixed characters the harder it is to crack
+* Doesn't contain memorable keyboard paths. This means DON'T use QWERTY as your password or any other memorable path.
+* It's not based on your personal information.
+* Do not reuse password
+
+![password](/password-meme.png)
+
+
+
+
+You can use a password manager to help you manage all of your password.
 
 
 # What is a password manager

@@ -4,10 +4,63 @@
 	<link>https://rebootcyber.xyz/</link>
 	<description>Recent content on Liam Blog</description>
 	<generator>Hugo -- gohugo.io</generator>
-	<lastBuildDate>Wed, 16 Nov 2022 15:29:13 -0600</lastBuildDate>
+	<lastBuildDate>Thu, 24 Nov 2022 11:59:19 -0600</lastBuildDate>
     
         <atom:link href="https://rebootcyber.xyz/index.xml" rel="self" type="application/rss+xml" />
 	
+	
+	<item>
+		<title>Secure Your Linux Server</title>
+		<link>https://rebootcyber.xyz/posts/secure-your-linux-server/</link>
+		<pubDate>Thu, 24 Nov 2022 11:59:19 -0600</pubDate>
+		
+		<guid>https://rebootcyber.xyz/posts/secure-your-linux-server/</guid>
+		<description>&lt;p&gt;GNU/Linux server are great, cost-effective way for businesses to store and share data. GNU/Linux is open-sources, so it provides plenty of resources and community cooperation
+. However, that also brings security  concerns.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re going to run a GNU/Linux server, you NEED to know how to secure it properly.&lt;/p&gt;
+&lt;h1 id=&#34;1-updates-the-server&#34;&gt;1. Updates the server&lt;/h1&gt;
+&lt;p&gt;The first thing you used do is update the OS to the latest version. Most VPS or cloud-based server update when you deploy them but still update. Run this commands based on the OS you are
+running. If you don&amp;rsquo;t know then run: &amp;rsquo; cat /etc/issue `. This will tell you.&lt;/p&gt;
+&lt;p&gt;Debian based(Debian/Ubuntu): &lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt upgrade &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Red Hat(CentOS): &lt;code&gt;sudo dnf upgrade &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;OpenSuse: &lt;code&gt;sudo zypper update &amp;amp;&amp;amp; sudo zypper up&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;2-securing-ssh&#34;&gt;2. Securing ssh&lt;/h1&gt;
+&lt;p&gt;SSH or Secure Shell is a way to connect to your server remotely. This is really easy to secure.&lt;/p&gt;
+&lt;h2 id=&#34;changing-port-number&#34;&gt;Changing port number&lt;/h2&gt;
+&lt;p&gt;First you want to change the default port. This is not really a big secure step and if you want to skip it you can. If you do want to change first you go into the config file&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo vim /etc/ssh/sshd_config&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Ones you do that find the line that says &lt;strong&gt;Port 22&lt;/strong&gt; and change the 22 to something different. Make sure the number you picked is not already in used or will be used as a port number.&lt;/p&gt;
+&lt;h2 id=&#34;ssh-keys&#34;&gt;SSH keys&lt;/h2&gt;
+&lt;p&gt;Next we will set up a key pair. If you use GNU/Linux on your host machine (The machine you are using right now) just run&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh-key -t rsa &lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you are using something different just look up generate ssh key pair with then what ever program you are using. During the create progress just add all of your info and if you want to use a password with it. For extra security I would recommend adding a password but you don&amp;rsquo;t have to.&lt;/p&gt;
+&lt;h3 id=&#34;copying-the-key-to-the-remote-machine&#34;&gt;Copying the key to the remote machine&lt;/h3&gt;
+&lt;p&gt;Type&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh-copy-id username@your_host_address&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Next Disable server ssh root login. Just run&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo vim /etc/ssh/sshd_config&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Find the line that says &lt;strong&gt;PermitRootLogin_yes&lt;/strong&gt; and change it to &lt;strong&gt;PermitRootLogin_no&lt;/strong&gt;. It is very important to add the user account you will use to login. Just add the line &amp;ldquo;AllowUsers your_username_here&amp;rdquo; in the sshd config file.&lt;/p&gt;
+&lt;h2 id=&#34;disable-empty-password&#34;&gt;Disable Empty password&lt;/h2&gt;
+&lt;p&gt;You need to prevent remote logins from accounts with empty password just do&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo vim /etec/sshd/sshd_config&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;And change the line&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;PermitEmptyPasswords no&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;disable-root-login&#34;&gt;Disable root login&lt;/h3&gt;
+&lt;p&gt;You don&amp;rsquo;t need root using ssh. &lt;strong&gt;Make sure that you have an account with sudo permissions before doing this&lt;/strong&gt;. You also have to add the user to the ssh group.&lt;/p&gt;
+&lt;p&gt;If you are on debian run &lt;code&gt; sudo usermod -aG ssh Your_Username_here&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo vim /etc/sshd/sshd_config&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then the line &lt;strong&gt;#PermitRootLogin&lt;/strong&gt; and change it to&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;PermitRootLogin no&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then ssh is final secure and really locked down.&lt;/p&gt;
+&lt;h2 id=&#34;restarting-the-ssh-services&#34;&gt;restarting the SSH services&lt;/h2&gt;
+&lt;p&gt;Then restart theSSH services. It is different for every system but if you are using systemd do&lt;/p&gt;
+&lt;p&gt;&lt;code&gt; sudo systemctl reload sshd&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You also have to add the user to the ssh group. If you are on debian run &lt;code&gt; sudo usermod -aG ssh Your_Username_here&lt;/code&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;3-firewall&#34;&gt;3. Firewall&lt;/h1&gt;
+&lt;p&gt;You need to setup firewall. This will block traffic based on the config. There are alot of firewall app on GNU/Linux but I will use UFW. Just run &lt;code&gt;sudo ufw allow SSH_Port_Number&lt;/code&gt;. Then you
+are done.&lt;/p&gt;
+</description>
+	</item>
 	
 	<item>
 		<title>Subdomain Takeover</title>
@@ -494,8 +547,20 @@ At that point you need to change then on every device you want to be connect to 
 		<pubDate>Fri, 07 Oct 2022 13:54:49 -0500</pubDate>
 		
 		<guid>https://rebootcyber.xyz/posts/password/</guid>
-		<description>&lt;p&gt;Password-Manager&lt;/p&gt;
-&lt;h1 id=&#34;password-manager&#34;&gt;Password-Manager&lt;/h1&gt;
+		<description>&lt;h1 id=&#34;why-you-need-a-strong-password&#34;&gt;Why you need a strong password&lt;/h1&gt;
+&lt;p&gt;Password are really important they are basically the key to your inter live. Like if someone knows your banking password they could just steal all of your
+money. Another scenario is that if a hacker got access  to your email then every could reset your password for everything then destroy your entire life.&lt;/p&gt;
+&lt;h2 id=&#34;how-to-make-a-strong-password&#34;&gt;How to make a strong password&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;It&amp;rsquo;s at least 12 characters long. The longer your is password is - the better&lt;/li&gt;
+&lt;li&gt;Use uppercase and lowercase letters, numbers, and special symbols. The more mixed characters the harder it is to crack&lt;/li&gt;
+&lt;li&gt;Doesn&amp;rsquo;t contain memorable keyboard paths. This means DON&amp;rsquo;T use QWERTY as your password or any other memorable path.&lt;/li&gt;
+&lt;li&gt;It&amp;rsquo;s not based on your personal information.&lt;/li&gt;
+&lt;li&gt;Do not reuse password&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rebootcyber.xyz/password-meme.png&#34; alt=&#34;password&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;You can use a password manager to help you manage all of your password.&lt;/p&gt;
 &lt;h1 id=&#34;what-is-a-password-manager&#34;&gt;What is a password manager&lt;/h1&gt;
 &lt;p&gt;A password manager is a place to keep all of your password safe. It is a really important you have one. This allows you to have complex passwords without remember them. If you don&amp;rsquo;t have a password manager please get one.&lt;/p&gt;
 &lt;h2 id=&#34;type-of-password-manager&#34;&gt;Type of password manager&lt;/h2&gt;
