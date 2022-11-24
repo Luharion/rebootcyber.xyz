@@ -192,14 +192,37 @@
 
 <article class="post-single">
   <header class="post-header">
-    
+    <div class="breadcrumbs"><a href="https://rebootcyber.xyz">Home</a>&nbsp;»&nbsp;<a href="https://rebootcyber.xyz/posts/">Posts</a></div>
     <h1 class="post-title">
       Pihole
     </h1>
-    <div class="post-meta"><span title='2022-10-07 14:06:43 -0500 CDT'>October 7, 2022</span>
+    <div class="post-meta"><span title='2022-10-07 14:06:43 -0500 CDT'>October 7, 2022</span>&nbsp;·&nbsp;3 min
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#pihole" aria-label="PiHole">PiHole</a></li>
+                <li>
+                    <a href="#how-do-you-set-up-a-pi-hole" aria-label="How do you set up a Pi-Hole">How do you set up a Pi-Hole</a><ul>
+                        
+                <li>
+                    <a href="#user-interface" aria-label="User interface">User interface</a></li>
+                <li>
+                    <a href="#how-do-i-add-this-to-my-router" aria-label="How do I add this to my router">How do I add this to my router</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><h1 id="pihole">PiHole<a hidden class="anchor" aria-hidden="true" href="#pihole">#</a></h1>
 <p>Pi-Hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network.
 This allows you to block unwanted stuff and websites on your private network.DNS Sinkhole is a mechanism aimed at protecting users by intercepting DNS request attempting to connect to known malicious or unwanted domains and returning a false, or rather controlled IP address. The controlled IP address points to a sinkhole server defined by the DNS sinkhole administrator.</p>
@@ -234,6 +257,19 @@ At that point you need to change then on every device you want to be connect to 
       <li><a href="https://rebootcyber.xyz/tags/dns/">DNS</a></li>
       <li><a href="https://rebootcyber.xyz/tags/self-hosted/">Self-Hosted</a></li>
     </ul>
+<nav class="paginav">
+  <a class="prev" href="https://rebootcyber.xyz/posts/pfsense-opendns/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Pfsense Opendns</span>
+  </a>
+  <a class="next" href="https://rebootcyber.xyz/posts/how-to-pass-the-comptia-network&#43;/">
+    <span class="title">Next »</span>
+    <br>
+    <span>How to Pass the Comptia Network&#43;</span>
+  </a>
+</nav>
+
   </footer>
 </article>
     </main>
@@ -300,6 +336,53 @@ At that point you need to change then on every device you want to be connect to 
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

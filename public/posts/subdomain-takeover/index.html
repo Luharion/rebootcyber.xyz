@@ -195,14 +195,32 @@ Back to what a subdomain is. All a subdomain is a prefox added to a domain name 
 
 <article class="post-single">
   <header class="post-header">
-    
+    <div class="breadcrumbs"><a href="https://rebootcyber.xyz">Home</a>&nbsp;»&nbsp;<a href="https://rebootcyber.xyz/posts/">Posts</a></div>
     <h1 class="post-title">
       Subdomain Takeover
     </h1>
-    <div class="post-meta"><span title='2022-11-16 15:29:13 -0600 CST'>November 16, 2022</span>
+    <div class="post-meta"><span title='2022-11-16 15:29:13 -0600 CST'>November 16, 2022</span>&nbsp;·&nbsp;2 min
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#what-are-subdomains" aria-label="What are subdomains">What are subdomains</a></li>
+                <li>
+                    <a href="#a-subdomain-takeover" aria-label="A subdomain takeover">A subdomain takeover</a></li>
+                <li>
+                    <a href="#how-to-protect-your-website" aria-label="How to protect your website">How to protect your website</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><h1 id="what-are-subdomains">What are subdomains<a hidden class="anchor" aria-hidden="true" href="#what-are-subdomains">#</a></h1>
 <p>To explain what a subdomain is you need to explain what a domain is. A domain name is the name of your website. So like
 rebootcyber.xyz  or google.com is a domain. This allows users to just type in a name instead of a ip address. This makes it
@@ -227,6 +245,19 @@ same github account. Then the DNS entry will point to the hacker github so my co
   <footer class="post-footer">
     <ul class="post-tags">
     </ul>
+<nav class="paginav">
+  <a class="prev" href="https://rebootcyber.xyz/posts/secure-your-linux-server/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Secure Your Linux Server</span>
+  </a>
+  <a class="next" href="https://rebootcyber.xyz/posts/ip-address/">
+    <span class="title">Next »</span>
+    <br>
+    <span>IP Address</span>
+  </a>
+</nav>
+
   </footer>
 </article>
     </main>
@@ -293,6 +324,53 @@ same github account. Then the DNS entry will point to the hacker github so my co
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

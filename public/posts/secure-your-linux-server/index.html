@@ -198,14 +198,50 @@ If you&rsquo;re going to run a GNU/Linux server, you NEED to know how to secure 
 
 <article class="post-single">
   <header class="post-header">
-    
+    <div class="breadcrumbs"><a href="https://rebootcyber.xyz">Home</a>&nbsp;»&nbsp;<a href="https://rebootcyber.xyz/posts/">Posts</a></div>
     <h1 class="post-title">
       Secure Your Linux Server
     </h1>
-    <div class="post-meta"><span title='2022-11-24 11:59:19 -0600 CST'>November 24, 2022</span>
+    <div class="post-meta"><span title='2022-11-24 11:59:19 -0600 CST'>November 24, 2022</span>&nbsp;·&nbsp;3 min
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#1-updates-the-server" aria-label="1. Updates the server">1. Updates the server</a></li>
+                <li>
+                    <a href="#2-securing-ssh" aria-label="2. Securing ssh">2. Securing ssh</a><ul>
+                        
+                <li>
+                    <a href="#changing-port-number" aria-label="Changing port number">Changing port number</a></li>
+                <li>
+                    <a href="#ssh-keys" aria-label="SSH keys">SSH keys</a><ul>
+                        
+                <li>
+                    <a href="#copying-the-key-to-the-remote-machine" aria-label="Copying the key to the remote machine">Copying the key to the remote machine</a></li></ul>
+                </li>
+                <li>
+                    <a href="#disable-empty-password" aria-label="Disable Empty password">Disable Empty password</a><ul>
+                        
+                <li>
+                    <a href="#disable-root-login" aria-label="Disable root login">Disable root login</a></li></ul>
+                </li>
+                <li>
+                    <a href="#restarting-the-ssh-services" aria-label="restarting the SSH services">restarting the SSH services</a></li></ul>
+                </li>
+                <li>
+                    <a href="#3-firewall" aria-label="3. Firewall">3. Firewall</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><p>GNU/Linux server are great, cost-effective way for businesses to store and share data. GNU/Linux is open-sources, so it provides plenty of resources and community cooperation
 . However, that also brings security  concerns.</p>
 <p>If you&rsquo;re going to run a GNU/Linux server, you NEED to know how to secure it properly.</p>
@@ -259,6 +295,14 @@ are done.</p>
       <li><a href="https://rebootcyber.xyz/tags/networking/">Networking</a></li>
       <li><a href="https://rebootcyber.xyz/tags/use/">use</a></li>
     </ul>
+<nav class="paginav">
+  <a class="next" href="https://rebootcyber.xyz/posts/subdomain-takeover/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Subdomain Takeover</span>
+  </a>
+</nav>
+
   </footer>
 </article>
     </main>
@@ -325,6 +369,53 @@ are done.</p>
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

@@ -8,6 +8,8 @@ $ whoami
 I am a nerd, an IT professional, and an aspiring cyber security professional. I enjoy a wide range of IT topics, but my goal is to get into cyber security. I was very fortunate to get into IT. I have about a year and a half experience, I hold the CompTIA A+ 1001 and Network+ n10-008, and I have some projects to tech myself some of the fundamentals. Luckily, I was able to get my foot in the door, and I plan to get it my best shot.
 
 
+If you want to keep update with this blog use [RSS](https://rebootcyber.xyz/index.xml) feed.
+
 # The reason for this blog
 
 ```

@@ -198,14 +198,60 @@ Content installing VMware Workstation as hypervisor Configuring Pfsense firewall
 
 <article class="post-single">
   <header class="post-header">
-    
+    <div class="breadcrumbs"><a href="https://rebootcyber.xyz">Home</a>&nbsp;»&nbsp;<a href="https://rebootcyber.xyz/posts/">Posts</a></div>
     <h1 class="post-title">
       Cybersecurity Homelab for Dectection and Monitoring
     </h1>
-    <div class="post-meta"><span title='2022-10-07 14:21:08 -0500 CDT'>October 7, 2022</span>
+    <div class="post-meta"><span title='2022-10-07 14:21:08 -0500 CDT'>October 7, 2022</span>&nbsp;·&nbsp;6 min
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#cybersecurity-homelab-for-dectection--monitoring" aria-label="Cybersecurity homelab for dectection &amp;amp; monitoring">Cybersecurity homelab for dectection &amp; monitoring</a></li>
+                <li>
+                    <a href="#building-a-cybersecurity-homelab-for-detection--monitoring" aria-label="Building a cybersecurity homelab for detection &amp;amp; monitoring">Building a cybersecurity homelab for detection &amp; monitoring</a><ul>
+                        
+                <li>
+                    <a href="#what-is-a-homelab" aria-label="What is a homelab">What is a homelab</a></li>
+                <li>
+                    <a href="#content" aria-label="Content">Content</a></li>
+                <li>
+                    <a href="#downloading--installing-vmware-workstation-pro" aria-label="Downloading &amp;amp; installing vmware workstation pro">Downloading &amp; installing vmware workstation pro</a></li>
+                <li>
+                    <a href="#configuring-pfsense" aria-label="Configuring Pfsense">Configuring Pfsense</a></li>
+                <li>
+                    <a href="#configuring-security-onion" aria-label="Configuring Security Onion">Configuring Security Onion</a><ul>
+                        
+                <li>
+                    <a href="#seconionmgmtanalyst-machine" aria-label="SecOnionMgmt/Analyst Machine">SecOnionMgmt/Analyst Machine</a></li></ul>
+                </li>
+                <li>
+                    <a href="#configuring-kali-linux" aria-label="Configuring Kali Linux">Configuring Kali Linux</a></li>
+                <li>
+                    <a href="#pfsense-interfaces-and-rules" aria-label="Pfsense interfaces and Rules">Pfsense interfaces and Rules</a><ul>
+                        
+                <li>
+                    <a href="#set-up-interface" aria-label="Set up Interface">Set up Interface</a></li>
+                <li>
+                    <a href="#configing-windows-server-as-a-domain-controller" aria-label="Configing Windows server as a domain controller">Configing Windows server as a domain controller</a></li>
+                <li>
+                    <a href="#windows-10-host-networking" aria-label="Windows 10 host networking">Windows 10 host networking</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><h1 id="cybersecurity-homelab-for-dectection--monitoring">Cybersecurity homelab for dectection &amp; monitoring<a hidden class="anchor" aria-hidden="true" href="#cybersecurity-homelab-for-dectection--monitoring">#</a></h1>
 <h1 id="building-a-cybersecurity-homelab-for-detection--monitoring">Building a cybersecurity homelab for detection &amp; monitoring<a hidden class="anchor" aria-hidden="true" href="#building-a-cybersecurity-homelab-for-detection--monitoring">#</a></h1>
 <p>This homelab will help you apply concepets used in real-world large-scale/enterprise infrastructe</p>
@@ -402,6 +448,19 @@ Content installing VMware Workstation as hypervisor Configuring Pfsense firewall
       <li><a href="https://rebootcyber.xyz/tags/pfsense/">Pfsense</a></li>
       <li><a href="https://rebootcyber.xyz/tags/hack/">HACK</a></li>
     </ul>
+<nav class="paginav">
+  <a class="prev" href="https://rebootcyber.xyz/posts/lis/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Lis</span>
+  </a>
+  <a class="next" href="https://rebootcyber.xyz/posts/uptime-kuma/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Uptime Kuma</span>
+  </a>
+</nav>
+
   </footer>
 </article>
     </main>
@@ -468,6 +527,53 @@ Content installing VMware Workstation as hypervisor Configuring Pfsense firewall
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

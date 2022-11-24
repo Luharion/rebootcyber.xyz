@@ -192,14 +192,33 @@
 
 <article class="post-single">
   <header class="post-header">
-    
+    <div class="breadcrumbs"><a href="https://rebootcyber.xyz">Home</a>&nbsp;»&nbsp;<a href="https://rebootcyber.xyz/posts/">Posts</a></div>
     <h1 class="post-title">
       Lis
     </h1>
-    <div class="post-meta"><span title='2022-10-15 15:13:23 -0500 CDT'>October 15, 2022</span>
+    <div class="post-meta"><span title='2022-10-15 15:13:23 -0500 CDT'>October 15, 2022</span>&nbsp;·&nbsp;1 min
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#install-script" aria-label="Install script">Install script</a><ul>
+                        
+                <li>
+                    <a href="#the-future-plans" aria-label="The future plans">The future plans</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><h1 id="install-script">Install script<a hidden class="anchor" aria-hidden="true" href="#install-script">#</a></h1>
 <p>If you are Artix Linux with runit then you can use what I use for my desktop Linux experience. The script needs
 a little bit of work still and I am working on it. There are still somethings that I don&rsquo;t like but I am close
@@ -222,6 +241,19 @@ my website. If you are reading this in the future the script is on my website. J
       <li><a href="https://rebootcyber.xyz/tags/tech/">tech</a></li>
       <li><a href="https://rebootcyber.xyz/tags/use/">use</a></li>
     </ul>
+<nav class="paginav">
+  <a class="prev" href="https://rebootcyber.xyz/posts/dns/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Dns</span>
+  </a>
+  <a class="next" href="https://rebootcyber.xyz/posts/cybersecurity-homelab-for-dectection-and-monitoring/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Cybersecurity Homelab for Dectection and Monitoring</span>
+  </a>
+</nav>
+
   </footer>
 </article>
     </main>
@@ -288,6 +320,53 @@ my website. If you are reading this in the future the script is on my website. J
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

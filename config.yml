@@ -37,3 +37,8 @@ params:
     socialIcons: # optional
         - name: "github"
           url: "https://github.com/Luharion"
+    ShowReadingTime: true
+    ShowToc: true
+    ShowBreadCrumbs: true
+    ShowCodeCopyButtons: true
+    ShowPostNavLinks: true

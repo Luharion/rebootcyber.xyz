@@ -195,14 +195,46 @@ What are the ways to install it. You can install using docker, install script, o
 
 <article class="post-single">
   <header class="post-header">
-    
+    <div class="breadcrumbs"><a href="https://rebootcyber.xyz">Home</a>&nbsp;»&nbsp;<a href="https://rebootcyber.xyz/posts/">Posts</a></div>
     <h1 class="post-title">
       Uptime Kuma
     </h1>
-    <div class="post-meta"><span title='2022-10-07 14:18:28 -0500 CDT'>October 7, 2022</span>
+    <div class="post-meta"><span title='2022-10-07 14:18:28 -0500 CDT'>October 7, 2022</span>&nbsp;·&nbsp;2 min
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#uptime-kuma" aria-label="uptime-kuma">uptime-kuma</a></li>
+                <li>
+                    <a href="#uptime-kuma-1" aria-label="UPTIME-KUMA">UPTIME-KUMA</a><ul>
+                        
+                <li>
+                    <a href="#what-are-the-ways-to-install-it" aria-label="What are the ways to install it.">What are the ways to install it.</a><ul>
+                        
+                <li>
+                    <a href="#how-do-you-install-it" aria-label="How do you install it">How do you install it</a></li>
+                <li>
+                    <a href="#set-up-uptime-kuma" aria-label="Set up uptime-kuma">Set up uptime-kuma</a></li>
+                <li>
+                    <a href="#setting-up-email-with-uptime-kuma" aria-label="Setting up email with Uptime Kuma">Setting up email with Uptime Kuma</a></li>
+                <li>
+                    <a href="#the-closing" aria-label="The closing">The closing</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><h1 id="uptime-kuma">uptime-kuma<a hidden class="anchor" aria-hidden="true" href="#uptime-kuma">#</a></h1>
 <h1 id="uptime-kuma-1">UPTIME-KUMA<a hidden class="anchor" aria-hidden="true" href="#uptime-kuma-1">#</a></h1>
 <p>What is Uptime-Kuma? Uptime-Kuma is a self-hosted monitoring tool. I will say at first I thought this was dumb. Why would I need a uptime monitor system? When I run it just to give it a chance I fell in love with it because of one feature. The feature notification. You can send notification to email, discord, telegram, and etc.</p>
@@ -239,6 +271,19 @@ What are the ways to install it. You can install using docker, install script, o
       <li><a href="https://rebootcyber.xyz/tags/tech/">tech</a></li>
       <li><a href="https://rebootcyber.xyz/tags/hardware/">hardware</a></li>
     </ul>
+<nav class="paginav">
+  <a class="prev" href="https://rebootcyber.xyz/posts/cybersecurity-homelab-for-dectection-and-monitoring/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Cybersecurity Homelab for Dectection and Monitoring</span>
+  </a>
+  <a class="next" href="https://rebootcyber.xyz/posts/sata-cable-hack/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Sata Cable Hack</span>
+  </a>
+</nav>
+
   </footer>
 </article>
     </main>
@@ -305,6 +350,53 @@ What are the ways to install it. You can install using docker, install script, o
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

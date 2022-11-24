@@ -195,14 +195,43 @@ IPv4 An IPv4 address looks like 127.0.0.1. It is kinda of a complete technology 
 
 <article class="post-single">
   <header class="post-header">
-    
+    <div class="breadcrumbs"><a href="https://rebootcyber.xyz">Home</a>&nbsp;»&nbsp;<a href="https://rebootcyber.xyz/posts/">Posts</a></div>
     <h1 class="post-title">
       IP Address
     </h1>
-    <div class="post-meta"><span title='2022-11-05 11:10:02 -0500 CDT'>November 5, 2022</span>
+    <div class="post-meta"><span title='2022-11-05 11:10:02 -0500 CDT'>November 5, 2022</span>&nbsp;·&nbsp;4 min
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#what-is-a-ip-address" aria-label="What is a IP Address?">What is a IP Address?</a><ul>
+                        
+                <li>
+                    <a href="#ipv4" aria-label="IPv4">IPv4</a><ul>
+                        
+                <li>
+                    <a href="#nat" aria-label="NAT">NAT</a></li>
+                <li>
+                    <a href="#the-different-between-public-and-private-ipv4-address" aria-label="The different between public and private IPv4 address">The different between public and private IPv4 address</a></li></ul>
+                </li>
+                <li>
+                    <a href="#ipv6" aria-label="IPv6">IPv6</a></li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><h1 id="what-is-a-ip-address">What is a IP Address?<a hidden class="anchor" aria-hidden="true" href="#what-is-a-ip-address">#</a></h1>
 <p>An IP address is Internet Protocol Address. Basically it is the address to a computer. There are two types IPv4 and IPv6. IPv4 is used everywhere but is every old. IPv6 is not used every much but is newer.</p>
 <h2 id="ipv4">IPv4<a hidden class="anchor" aria-hidden="true" href="#ipv4">#</a></h2>
@@ -273,6 +302,19 @@ Multicast is the technique used to send a packet from one source (or multiple so
       <li><a href="https://rebootcyber.xyz/tags/networking/">Networking</a></li>
       <li><a href="https://rebootcyber.xyz/tags/tech/">tech</a></li>
     </ul>
+<nav class="paginav">
+  <a class="prev" href="https://rebootcyber.xyz/posts/subdomain-takeover/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Subdomain Takeover</span>
+  </a>
+  <a class="next" href="https://rebootcyber.xyz/posts/dns/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Dns</span>
+  </a>
+</nav>
+
   </footer>
 </article>
     </main>
@@ -339,6 +381,53 @@ Multicast is the technique used to send a packet from one source (or multiple so
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

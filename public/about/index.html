@@ -92,8 +92,8 @@
   "keywords": [
     
   ],
-  "articleBody": "About me Introduction $ whoami I am a nerd, an IT professional, and an aspiring cyber security professional. I enjoy a wide range of IT topics, but my goal is to get into cyber security. I was very fortunate to get into IT. I have about a year and a half experience, I hold the CompTIA A+ 1001 and Network+ n10-008, and I have some projects to tech myself some of the fundamentals. Luckily, I was able to get my foot in the door, and I plan to get it my best shot.\nThe reason for this blog nmap -sC -sV -o It’s my time to give back. A lot of content creators I follow encourage people to put their experience. I do a lot of random projects, why not put it out there and it may help someone so why not. This is also kinda of a selfish reason to because I use this site for documation instead of having my bookmark file being 200 lines.\nI would like to thank you for taking the time out of your day to stop by this blog. I hope that you find something useful, and I hope that you can also share your experience as well\nHow can you contact me? The best way is to email me at liam@rebootcyber.xyz\n",
-  "wordCount" : "219",
+  "articleBody": "About me Introduction $ whoami I am a nerd, an IT professional, and an aspiring cyber security professional. I enjoy a wide range of IT topics, but my goal is to get into cyber security. I was very fortunate to get into IT. I have about a year and a half experience, I hold the CompTIA A+ 1001 and Network+ n10-008, and I have some projects to tech myself some of the fundamentals. Luckily, I was able to get my foot in the door, and I plan to get it my best shot.\nIf you want to keep update with this blog use RSS feed.\nThe reason for this blog nmap -sC -sV -o It’s my time to give back. A lot of content creators I follow encourage people to put their experience. I do a lot of random projects, why not put it out there and it may help someone so why not. This is also kinda of a selfish reason to because I use this site for documation instead of having my bookmark file being 200 lines.\nI would like to thank you for taking the time out of your day to stop by this blog. I hope that you find something useful, and I hope that you can also share your experience as well\nHow can you contact me? The best way is to email me at liam@rebootcyber.xyz\n",
+  "wordCount" : "231",
   "inLanguage": "en",
   "datePublished": "0001-01-01T00:00:00Z",
   "dateModified": "0001-01-01T00:00:00Z",
@@ -186,18 +186,42 @@
 
 <article class="post-single">
   <header class="post-header">
-    
+    <div class="breadcrumbs"><a href="https://rebootcyber.xyz">Home</a></div>
     <h1 class="post-title">
       
     </h1>
-    <div class="post-meta">
+    <div class="post-meta">2 min
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#about-me" aria-label="About me">About me</a></li>
+                <li>
+                    <a href="#introduction" aria-label="Introduction">Introduction</a></li>
+                <li>
+                    <a href="#the-reason-for-this-blog" aria-label="The reason for this blog">The reason for this blog</a><ul>
+                        
+                <li>
+                    <a href="#how-can-you-contact-me" aria-label="How can you contact me?">How can you contact me?</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><h1 id="about-me">About me<a hidden class="anchor" aria-hidden="true" href="#about-me">#</a></h1>
 <h1 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h1>
 <pre tabindex="0"><code>$ whoami
 </code></pre><p>I am a nerd, an IT professional, and an aspiring cyber security professional. I enjoy a wide range of IT topics, but my goal is to get into cyber security. I was very fortunate to get into IT. I have about a year and a half experience, I hold the CompTIA A+ 1001 and Network+ n10-008, and I have some projects to tech myself some of the fundamentals. Luckily, I was able to get my foot in the door, and I plan to get it my best shot.</p>
+<p>If you want to keep update with this blog use <a href="https://rebootcyber.xyz/index.xml">RSS</a> feed.</p>
 <h1 id="the-reason-for-this-blog">The reason for this blog<a hidden class="anchor" aria-hidden="true" href="#the-reason-for-this-blog">#</a></h1>
 <pre tabindex="0"><code>nmap -sC -sV -o
 </code></pre><p>It&rsquo;s my time to give back. A lot of content creators I follow encourage people to put their experience. I do a lot of random projects, why not put it out there and it may help someone so why not. This is also kinda of a selfish reason to because I use this site for documation instead of having my bookmark file being 200 lines.</p>
@@ -211,6 +235,7 @@
   <footer class="post-footer">
     <ul class="post-tags">
     </ul>
+
   </footer>
 </article>
     </main>
@@ -277,6 +302,53 @@
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

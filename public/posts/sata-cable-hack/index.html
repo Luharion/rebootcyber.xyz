@@ -195,14 +195,42 @@ How does the hack work The SATA cable interfaces can emit radio signal during ce
 
 <article class="post-single">
   <header class="post-header">
-    
+    <div class="breadcrumbs"><a href="https://rebootcyber.xyz">Home</a>&nbsp;»&nbsp;<a href="https://rebootcyber.xyz/posts/">Posts</a></div>
     <h1 class="post-title">
       Sata Cable Hack
     </h1>
-    <div class="post-meta"><span title='2022-10-07 14:15:51 -0500 CDT'>October 7, 2022</span>
+    <div class="post-meta"><span title='2022-10-07 14:15:51 -0500 CDT'>October 7, 2022</span>&nbsp;·&nbsp;2 min
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#sata-cable-hack" aria-label="SATA CABLE HACK">SATA CABLE HACK</a><ul>
+                        
+                <li>
+                    <a href="#what-is-a-sata-cable" aria-label="What is a SATA cable">What is a SATA cable</a></li>
+                <li>
+                    <a href="#how-does-the-hack-work" aria-label="How does the hack work">How does the hack work</a></li>
+                <li>
+                    <a href="#how-to-stop-this-attack" aria-label="How to stop this attack">How to stop this attack</a><ul>
+                        
+                <li>
+                    <a href="#what-is-the-future-of-this-attack" aria-label="What is the future of this attack">What is the future of this attack</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><h1 id="sata-cable-hack">SATA CABLE HACK<a hidden class="anchor" aria-hidden="true" href="#sata-cable-hack">#</a></h1>
 <h2 id="what-is-a-sata-cable">What is a SATA cable<a hidden class="anchor" aria-hidden="true" href="#what-is-a-sata-cable">#</a></h2>
 <p>SATA(Serial Advanced Technology Attachment) cable is an IDE standard first released in 2001 for connecting devices like optical drives and hard drives to the motherboard</p>
@@ -229,6 +257,19 @@ How does the hack work The SATA cable interfaces can emit radio signal during ce
       <li><a href="https://rebootcyber.xyz/tags/hardware/">hardware</a></li>
       <li><a href="https://rebootcyber.xyz/tags/tech/">tech</a></li>
     </ul>
+<nav class="paginav">
+  <a class="prev" href="https://rebootcyber.xyz/posts/uptime-kuma/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Uptime Kuma</span>
+  </a>
+  <a class="next" href="https://rebootcyber.xyz/posts/pfsense-opendns/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Pfsense Opendns</span>
+  </a>
+</nav>
+
   </footer>
 </article>
     </main>
@@ -295,6 +336,53 @@ How does the hack work The SATA cable interfaces can emit radio signal during ce
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 
